@@ -31,7 +31,7 @@ const Hero = () => {
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Hi, I'm{" "}
-            <span className="gradient-text">Your Name</span>
+            <span className="gradient-text">Ghasif Bajwa</span>
           </h1>
           
           <h2 className="text-2xl md:text-4xl text-muted-foreground mb-8">
