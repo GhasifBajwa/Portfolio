@@ -5,12 +5,13 @@ const Skills = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const skills = [
-    { name: "React & TypeScript", level: 95, color: "hsl(263 70% 50%)" },
-    { name: "UI/UX Design", level: 90, color: "hsl(220 90% 60%)" },
-    { name: "Node.js & APIs", level: 85, color: "hsl(263 70% 50%)" },
-    { name: "CSS & Tailwind", level: 92, color: "hsl(220 90% 60%)" },
-    { name: "Database Design", level: 80, color: "hsl(263 70% 50%)" },
-    { name: "Performance Optimization", level: 88, color: "hsl(220 90% 60%)" },
+    { name: "Html & Shopify", level: 100, color: "hsl(263, 70%, 50%)" },
+    { name: "Wordpress", level: 90, color: "hsl(220, 90%, 60%)" },
+    { name: "CSS, Bootstrap & Tailwind", level: 92, color: "hsl(220, 90%, 60%)" },
+    { name: "React & JavaScript", level: 80, color: "hsl(263, 70%, 50%)" },
+    { name: "Node.js & APIs", level: 85, color: "hsl(220, 90%, 60%)" },
+    { name: "Database Design", level: 80, color: "hsl(263, 70%, 50%)" },
+    { name: "Performance Optimization", level: 97, color: "hsl(220, 90%, 60%)" },
   ];
 
   useEffect(() => {
@@ -61,8 +62,8 @@ const Skills = () => {
                       className="h-full rounded-full transition-all duration-1000 ease-out"
                       style={{
                         width: isVisible ? `${skill.level}%` : "0%",
-                        background: `linear-gradient(90deg, ${skill.color}, ${skill.color}dd)`,
-                        boxShadow: `0 0 10px ${skill.color}80`,
+                        background: `linear-gradient(90deg, ${skill.color}, ${skill.color.replace(")", ", 0.8)")})`,
+                        boxShadow: `0 0 10px ${skill.color.replace(")", ", 0.5)")}`,
                       }}
                     />
                   </div>
@@ -72,7 +73,7 @@ const Skills = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            {["React", "TypeScript", "Tailwind", "Node.js", "PostgreSQL", "Git", "Figma", "REST APIs"].map(
+            {["React", "JavaScript", "Tailwind", "Bootstrap", "Node.js", "PostgreSQL", "Figma", "APIs", "Wordpress", "Shopify", "Html", "CSS"].map(
               (tech, index) => (
                 <div
                   key={index}

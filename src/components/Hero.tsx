@@ -65,7 +65,7 @@ const Hero = () => {
 
           <div className="flex gap-6 justify-center">
             <a
-              href="https://github.com"
+              href="https://github.com/GhasifBajwa"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform duration-300"
@@ -81,7 +81,7 @@ const Hero = () => {
               <Linkedin size={28} />
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:bajwaghasif@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform duration-300"
             >
               <Mail size={28} />

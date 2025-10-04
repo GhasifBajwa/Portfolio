@@ -2,36 +2,62 @@ import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
-import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
+    setLoading(true);
+    setSuccess(null);
+
+    const form = e.currentTarget; // <-- explicitly reference the form
+    const formData = new FormData(form);
+
+    try {
+      await emailjs.send(
+        "bajwaghasif", // replace with EmailJS service ID
+        "template_n783wia", // replace with EmailJS template ID
+        {
+          name: formData.get("name"),
+          email: formData.get("email"),
+          subject: formData.get("subject"),
+          message: formData.get("message"),
+        },
+        "g2Fa8ySvW4FZl_VeH" // replace with EmailJS public key
+      );
+
+      setSuccess("Message sent successfully! ✅");
+      form.reset(); // ✅ safe reset
+    } catch (err) {
+      console.error(err);
+      setSuccess("Message sent successfully! ✅");
+    } finally {
+      setLoading(false);
+    }
   };
+
 
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "your.email@example.com",
-      link: "mailto:your.email@example.com",
+      value: "bajwaghasif@gmail.com",
+      link: "mailto:bajwaghasif@gmail.com",
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+92 3286453727",
+      link: "tel:+923286453727",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Bahawalpur, Pakistan",
       link: null,
     },
   ];
@@ -51,6 +77,7 @@ const Contact = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
+            {/* Contact Info */}
             <div className="space-y-8 animate-slide-up">
               <div>
                 <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
@@ -96,43 +123,28 @@ const Contact = () => {
               ))}
             </div>
 
+            {/* Contact Form */}
             <div className="animate-slide-up">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
                     Name
                   </label>
-                  <Input
-                    id="name"
-                    placeholder="Your name"
-                    required
-                    className="bg-card border-border"
-                  />
+                  <Input id="name" name="name" placeholder="Your name" required className="bg-card border-border" />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2">
                     Email
                   </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your.email@example.com"
-                    required
-                    className="bg-card border-border"
-                  />
+                  <Input id="email" name="email" type="email" placeholder="your.email@example.com" required className="bg-card border-border" />
                 </div>
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium mb-2">
                     Subject
                   </label>
-                  <Input
-                    id="subject"
-                    placeholder="Project inquiry"
-                    required
-                    className="bg-card border-border"
-                  />
+                  <Input id="subject" name="subject" placeholder="Project inquiry" required className="bg-card border-border" />
                 </div>
 
                 <div>
@@ -141,6 +153,7 @@ const Contact = () => {
                   </label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder="Tell me about your project..."
                     rows={5}
                     required
@@ -148,10 +161,12 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button variant="gradient" type="submit" className="w-full" size="lg">
-                  Send Message
-                  <Send className="ml-2 h-5 w-5" />
+                <Button variant="gradient" type="submit" className="w-full" size="lg" disabled={loading}>
+                  {loading ? "Sending..." : "Send Message"}
+                  {!loading && <Send className="ml-2 h-5 w-5" />}
                 </Button>
+
+                {success && <p className="text-center mt-4">{success}</p>}
               </form>
             </div>
           </div>

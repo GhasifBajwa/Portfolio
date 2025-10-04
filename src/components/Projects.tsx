@@ -4,32 +4,32 @@ import { Button } from "./ui/button";
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Routine Management",
       description:
-        "A full-stack e-commerce solution with real-time inventory, payment processing, and admin dashboard.",
-      tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+        "A productivity-focused application designed to help users organize daily tasks, set reminders, track habits, and manage schedules with ease.",
+      tags: ["React", "Node.js", "Tailwind", "Typescript"],
+      image: "src/assets/one.jpg",
     },
     {
-      title: "Task Management App",
+      title: "Shopify Jwelley Store",
       description:
-        "Collaborative task management tool with real-time updates, drag-and-drop interface, and team features.",
-      tags: ["TypeScript", "React", "Tailwind", "Supabase"],
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
+        "An elegant Shopify-based online store for jewellery, featuring custom product pages, secure checkout, responsive design, and seamless integration with payment gateways.",
+      tags: ["Shopify", "Html", "CSS", "Javascript"],
+      image: "src/assets/two.jpg",
     },
     {
-      title: "Portfolio Website",
+      title: "Code Cleaner (HTML & CSS)",
       description:
-        "Modern portfolio site with smooth animations, dark mode, and optimized performance.",
-      tags: ["React", "Framer Motion", "CSS", "Vite"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+        "A utility tool that scans and optimizes HTML & CSS code by removing unused styles, formatting markup, and improving overall readability and performance.",
+      tags: ["React", "Typescript", "Tailwind", "AI"],
+      image: "src/assets/four.jpg",
     },
     {
-      title: "Weather Dashboard",
+      title: "Game Play to Reels",
       description:
-        "Real-time weather application with location detection, forecasts, and beautiful visualizations.",
-      tags: ["React", "API Integration", "Charts", "PWA"],
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=600&fit=crop",
+        "A creative tool that captures gameplay highlights and automatically converts them into short-form video reels, optimized for sharing on platforms like Instagram, TikTok, and YouTube Shorts. (Under Process)",
+      tags: ["React", "Typescript", "Tailwind", "APIs Integration"],
+      image: "src/assets/three.jpg",
     },
   ];
 
@@ -71,7 +71,7 @@ const Projects = () => {
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2 mb-0">
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
@@ -82,7 +82,7 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  <div className="flex gap-4">
+                  {/* <div className="flex gap-4">
                     <Button
                       variant="outline"
                       size="sm"
@@ -95,7 +95,7 @@ const Projects = () => {
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Live Demo
                     </Button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}
