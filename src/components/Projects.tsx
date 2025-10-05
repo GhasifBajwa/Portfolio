@@ -1,5 +1,9 @@
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "./ui/button";
+import one from "@/assets/one.jpg";
+import two from "@/assets/two.jpg";
+import four from "@/assets/four.jpg";
+import three from "@/assets/three.jpg";
 
 const Projects = () => {
   const projects = [
@@ -7,29 +11,29 @@ const Projects = () => {
       title: "Routine Management",
       description:
         "A productivity-focused application designed to help users organize daily tasks, set reminders, track habits, and manage schedules with ease.",
-      tags: ["React", "Node.js", "Tailwind", "Typescript"],
-      image: "src/assets/one.jpg",
+      tags: ["React", "Node.js", "Tailwind", "Typescript"]
+      <img src={one} alt="" />
     },
     {
       title: "Shopify Jwelley Store",
       description:
         "An elegant Shopify-based online store for jewellery, featuring custom product pages, secure checkout, responsive design, and seamless integration with payment gateways.",
-      tags: ["Shopify", "Html", "CSS", "Javascript"],
-      image: "src/assets/two.jpg",
+      tags: ["Shopify", "Html", "CSS", "Javascript"]
+      <img src={two} alt="" />
     },
     {
       title: "Code Cleaner (HTML & CSS)",
       description:
         "A utility tool that scans and optimizes HTML & CSS code by removing unused styles, formatting markup, and improving overall readability and performance.",
-      tags: ["React", "Typescript", "Tailwind", "AI"],
-      image: "src/assets/four.jpg",
+      tags: ["React", "Typescript", "Tailwind", "AI"]
+      <img src={four} alt="" />
     },
     {
       title: "Game Play to Reels",
       description:
         "A creative tool that captures gameplay highlights and automatically converts them into short-form video reels, optimized for sharing on platforms like Instagram, TikTok, and YouTube Shorts. (Under Process)",
-      tags: ["React", "Typescript", "Tailwind", "APIs Integration"],
-      image: "src/assets/three.jpg",
+      tags: ["React", "Typescript", "Tailwind", "APIs Integration"]
+      <img src={three} alt="" />
     },
   ];
 
