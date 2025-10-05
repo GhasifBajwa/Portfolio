@@ -11,29 +11,29 @@ const Projects = () => {
       title: "Routine Management",
       description:
         "A productivity-focused application designed to help users organize daily tasks, set reminders, track habits, and manage schedules with ease.",
-      tags: ["React", "Node.js", "Tailwind", "Typescript"]
-      <img src={one} alt="" />
+      tags: ["React", "Node.js", "Tailwind", "Typescript"],
+      image: one, // ✅ image reference
     },
     {
-      title: "Shopify Jwelley Store",
+      title: "Shopify Jewellery Store",
       description:
         "An elegant Shopify-based online store for jewellery, featuring custom product pages, secure checkout, responsive design, and seamless integration with payment gateways.",
-      tags: ["Shopify", "Html", "CSS", "Javascript"]
-      <img src={two} alt="" />
+      tags: ["Shopify", "Html", "CSS", "Javascript"],
+      image: two, // ✅ image reference
     },
     {
       title: "Code Cleaner (HTML & CSS)",
       description:
         "A utility tool that scans and optimizes HTML & CSS code by removing unused styles, formatting markup, and improving overall readability and performance.",
-      tags: ["React", "Typescript", "Tailwind", "AI"]
-      <img src={four} alt="" />
+      tags: ["React", "Typescript", "Tailwind", "AI"],
+      image: four, // ✅ image reference
     },
     {
       title: "Game Play to Reels",
       description:
         "A creative tool that captures gameplay highlights and automatically converts them into short-form video reels, optimized for sharing on platforms like Instagram, TikTok, and YouTube Shorts. (Under Process)",
-      tags: ["React", "Typescript", "Tailwind", "APIs Integration"]
-      <img src={three} alt="" />
+      tags: ["React", "Typescript", "Tailwind", "APIs Integration"],
+      image: three, // ✅ image reference
     },
   ];
 
@@ -86,12 +86,9 @@ const Projects = () => {
                     ))}
                   </div>
 
+                  {/* Optional buttons */}
                   {/* <div className="flex gap-4">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="flex-1"
-                    >
+                    <Button variant="outline" size="sm" className="flex-1">
                       <Github className="mr-2 h-4 w-4" />
                       Code
                     </Button>
