@@ -13,7 +13,7 @@ const Footer = () => {
                 Let's Build Something Amazing
               </h3>
               <p className="text-muted-foreground">
-                © {currentYear} Ghasif Bajwa. All rights reserved.
+                © {currentYear} Ghasif Bajwaw. All rights reserved.
               </p>
             </div>
 
